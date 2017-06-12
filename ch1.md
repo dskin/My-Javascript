@@ -1,0 +1,19 @@
+# 序 JavaScript
+
+## 简介
+
+在互联网早期，web日益流行的时候，关于表单验证只能填写完毕之后发送到服务器端进行校验，这对于当时普通用户接入互联网的速度来说，频繁的与服务器进行表单验证不仅浪费了大量的流量，本就低速的网络却一直花在重复提交的表单验证也极大影响了用户体验。
+
+基于这一情况，急需一种能够在本地客户端对要提交的表单数据进行校验的方法。作为当时技术前沿的Netscape公司，决定着手开发一种客户端语言，用以处理简单的表单验证请求，Brendan Eich负责这一项目，项目命名为LiveScript。在1995年二月，NetScape Navigator2浏览器发布的前夕，为了赶上当年Java的热潮， LiveScript遂改名为JavaScript，发布了1.0版本，虽然它与Java一点关系也没有。这便是JavaScript的起源。
+
+在这里不得不提一下当年浏览器大战的另一方，Internet Explorer。在JavaScript发布后，web的关注度屡创新高，微软也加大了对IE的投入与支持，于是在JavaScript发布的后一年，也就是1996年，在其浏览器IE内绑定发布了JScript，由于在当时年代内较为不太便捷的网络情况，绑定window操作系统的IE浏览器内置的JScript也逐渐获得大量市场份额，与Netscape JavaScript分庭抗礼，两个版本并存的JavaScript开始出现。
+
+这一情况并不是一个好兆头，多版本的JavaScript极大困扰了浏览器开发商和web开发人员对于两种不同JavaScript实现的兼容处理。这时候，JavaScript的标准化被提上日程。1997年，Netscape公司以JavaScript1.1为蓝本向欧洲计算机制造商协会（ECMA）提交了建议，ECMA指定了第39号技术委员会负责“标准化一种通用、跨平台、供应商中立的脚本语言的语法和语义”，经过数月的努力完成了ECMA-262，定义了一种名为ECMAScript的新脚本语言的标准。
+
+-----
+
+## JavaScript与ECMAScript
+
+> JavaScript与ECMAScript所指并不完全相同，虽然通常情况下二者被大众理解为同一个意思。
+
+
