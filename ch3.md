@@ -22,3 +22,60 @@
 2. typeof somefunction会返回function而不是object,这是由于JavaScript中函数和对象特殊关系造成的，函数是对象，对象也是函数，函数在JavaScript中是一等公民。
 3. typeof的安全防范机制。typeof 会对已声明未赋值或未声明的变量都显示undefined，某些情况下会造成困扰，可以利用这个小特性实现全局命名变量的检测判定。
 
+
+### String类型
+String类型也就是我们常说的字符串类型，它是由零或多个16位Unicode字符组成的字符序列，字符串可以用单引号或者双引号表示。
+
+String类型有一些特殊的[转义序列](https://msdn.microsoft.com/zh-cn/library/2yfce773(v=vs.94).aspx)，可以表示一些特殊的字符形式。
+
+JavaScript中字符串的值是不可变的，要改变某个字符串的值，底层实现是先销毁再创建。
+
+将任何一个值转为String类型的方法，一是使用toString（）方法，二是使用String（）函数。二者的区别是null和undefined类型无法通过第一种方式进行转换。
+
+### Boolean类型
+Boolean类型比较凄惨，只用两个字面值，true和false，二者是区分大小写的。要是想将其他类型值转为Boolean类型，则除了以下五种情况外，都将转为true值。
+
+* false
+* 空字符串
+* null
+* undefined
+* 0和NaN
+
+### Null类型
+Null值更凄惨，只有一个特殊的值，这就是null，它表示为空。这里需要注意的情况就是typeof null将返回object的小问题。此外，undefined和null做相等性测试的时候是相等的，因为undefined值派生于null。
+
+### Undefined类型
+undefined的疑惑就在于它既会对未声明的变量和已声明未赋值的值都返回undefined，而不是undeclared，这里值得关注。
+
+### Number类型
+JavaScript使用的是IEEE754格式来表示整数和浮点数值，因此也一直被浮点精度缺失的问题搞得头疼。Number类型也是JavaScript中最重要的数据类型之一。Number类型数值字面量可以使用十进制、八进制、十六进制来表示。
+
+对于极大极小的数值，可以使用科学计数法表示的浮点数值进行表示。
+
+Number.MIN_VALUE和Number.MAX_VALUE分别表示JavaScript所能表示的最小和最大数值，超过这个范围则用Infinity和-Infinity来表示。同时可以用`isFinite()`函数进行判定一个数是不是有穷数。
+
+NaN表示非数值，它是一个特殊的数值，不与任何值相等。NaN这个数值出现的意义就在于当出现异常运算的过程中不报错从而终止运算，而是返回NaN，不影响其它代码的执行。可以用`isNaN()`来判定某变量是否是数值，isNaN可用于对象。
+
+要想将其他类型的值转为Number类型，可通过`Number()`、`parseInt()`、`parseFloat()`这三个函数进行转换，第一个可用于任何数据类型，后两个则专门用于将字符串转为数值。
+
+Number()函数转换规则：
+* 布尔值，true和false转为1和0
+* 数字，简单传入传出
+* null，返回0
+* undefined，返回NaN
+* 字符串，进行特殊转换规则，较复杂不再论述P30
+* 对象，则调用valueOf或toString
+
+parseInt()函数转换规则则是遇到非数字会停止并返回之前已转换的数值，若开头就为非数值，则返回NaN。parseInt()接受参数作为转换进制基数。
+
+### Object类型
+> js高程定义对象概念说，对象其实就是一组数据和功能的集合。很简单精炼的概括。
+
+Object类在JavaScript中是所有它的实例的基础，它本身以及它的实例都拥有以下属性方法。
+* constructor 保存用于创建当前对象的函数
+* hasOwnProperty()
+* isPrototypeOf()
+* propertyIsEnumerable()
+* toLocalString()
+* toString()
+* valueOf()
